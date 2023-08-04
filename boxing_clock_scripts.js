@@ -47,9 +47,7 @@ function set_round_time() {
 }
 
 function set_rest_time() {
-  rest_time = (Math.floor(restminutesinput.value) * 60) + restsecondsinputsecondsinput.value;
-  minl = Math.floor(rest_time / 60);
-  lsec = rest_time % 60;
+  rest_time = (Math.floor(restminutesinput.value) * 60) + restsecondsinput.value;
 }
 
 function countdown(seclef=10) {
