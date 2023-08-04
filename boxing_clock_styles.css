@@ -29,7 +29,7 @@ h3 {
     display: flex;
 }
   
-button {
+#start_button, #reset_button {
     margin: 5px;
     width: 20vh;
     border-radius: 20px;
@@ -41,5 +41,31 @@ button {
 h1, h2, h3, footer, button {
     text-align: center;
     text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.content {
+    flex: 75%;
+}
+
+.sidebar {
+    flex: 25%;
+    background-color: darkgray;
+}
+
+
+@media (max-width: 768px) {
+    .flex-container {
+        flex-direction: column;
+    }
+    
+    .content,
+    .sidebar {
+        flex: 100%;
+    }
 }
 

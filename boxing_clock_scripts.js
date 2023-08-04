@@ -3,6 +3,9 @@ const sbutton = document.getElementById('start_button');
 const rbutton = document.getElementById('reset_button');
 const isrest = document.getElementById('isrest')
 const round_elem = document.getElementById('roundcounter')
+const roundbtn = document.getElementById('round_button')
+const roundin = document.getElementById('round_input')
+const number_of_rounds_label = document.getElementById('number_of_rounds_label')
 
 var round_start_audio = new Audio('sounds/round_start_sound.mp3')
 var round_end_audio = new Audio('sounds/round_end_sound.mp3') // Import the audio files
@@ -11,9 +14,25 @@ sbutton.style.backgroundColor = "green";
 rbutton.style.backgroundColor = "red";
 
 let secondsLeft = 10;
+let number_of_rounds = 1;
 let countdownTimeout;
 let isCountdownRunning = false; // Variable to track the countdown status
 let nround = 1;
+
+function set_rounds() {
+  number_of_rounds = roundin.value;
+  number_of_rounds_label.innerHTML = number_of_rounds;
+}
+
+function check_rounds() {
+  if (nround == number_of_rounds) {
+    alert("Fight finished")
+    reset_counter();
+  }
+  else {
+    rest_countdown()
+  }
+}
 
 function countdown(seclef=10) {
   if (seclef > 0) {
@@ -24,8 +43,8 @@ function countdown(seclef=10) {
     countdownTimeout = setTimeout(() => countdown(seclef), 1000);
   } else {
     isrest.innerHTML = "RESTING"
+    check_rounds()
     round_end_audio.play()
-    rest_countdown()
   }
 }
 
@@ -69,3 +88,4 @@ function start_counter() {
 
 sbutton.addEventListener("click", start_counter);
 rbutton.addEventListener("click", reset_counter);
+roundbtn.addEventListener("click", set_rounds);
