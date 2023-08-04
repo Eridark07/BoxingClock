@@ -43,10 +43,8 @@ The need for a simple timer for boxing and other martial arts training sessions 
 ## Support
 For any issues, questions, or suggestions related to this project, please open an [issue](https://github.com/Eridark07/BoxingClock/issues) on the GitHub repository. We appreciate your feedback!
 
-Happy boxing! 🥊
-
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
 
-Happy Training! 🥊
+Happy Boxing! 🥊
