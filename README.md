@@ -37,6 +37,14 @@ The Boxing Clock is a web application designed to help you manage and time your 
 
 This project was developed by Eric Matei Dragomir in 2023.
 
+## Acknowledgments
+The need for a simple timer for boxing and other martial arts training sessions inspired this boxing clock application.
+
+## Support
+For any issues, questions, or suggestions related to this project, please open an [issue](Eridark07/BoxingClock/issues) on the GitHub repository. We appreciate your feedback!
+
+Happy boxing! 🥊
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
