@@ -40,14 +40,12 @@ function set_rounds() {
 }
 
 function set_round_time() {
-  round_time = (Math.floor(minutesinput.value) * 60) + secondsinput.value;
-  minl = Math.floor(round_time / 60);
-  lsec = round_time % 60;
-  timer.innerHTML = (`${minl}min ${lsec}s`);
+  round_time = ((Math.floor(parseInt(minutesinput.value)) * 60) + parseInt(secondsinput.value));
+  timer.innerHTML = (`${minutesinput.value}min ${secondsinput.value}s`);
 }
 
 function set_rest_time() {
-  rest_time = (Math.floor(restminutesinput.value) * 60) + restsecondsinput.value;
+  rest_time = ((Math.floor(parseInt(restminutesinput.value)) * 60) + parseInt(restsecondsinput.value));
 }
 
 function countdown(seclef=10) {
