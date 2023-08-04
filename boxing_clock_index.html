@@ -7,11 +7,12 @@
     <title>Boxing Clock</title>
 </head>
   <body>
+    <h2>Boxing Clock</h2>
+    <hr>
     <div class="flex-container">
       <div class="content">
         <div>
-          <h2>Boxing Clock</h2>
-          <h3>Round <span id="roundcounter">1</span>/<span id="number_of_rounds_label">1</span></h3>
+          <h3>Round <span id="roundcounter">1</span>/<span id="number_of_rounds_label">12</span></h3>
           <h1 id="timer">3min 0s</h1>
           <h3 id="isrest">NOT RESTING</h3>
         </div>
@@ -21,17 +22,34 @@
             <button id="reset_button">Reset</button>
           </div>
         </div>
-        <div class="content container">
-          <footer>
-            <p>By Eric Matei Dragomir 2023</p>
-          </footer>
-        </div>
       </div>
       <div class="sidebar">
-        <input placeholder="Set number of rounds" type="number" id="round_input"> <br>
-        <button id="round_button">Set rounds</button>
+        <div class="contents">
+          <div>
+            <input placeholder="Set number of rounds" type="number" id="round_input" class="panel_input" step="1"> <br>
+            <button id="round_button" class="panel_buttons">Set rounds</button> 
+          </div>
+          <br>
+          <div>
+            <input placeholder="Minutes per round" type="number" id="minutes_input" class="panel_input" step="1">
+            <input placeholder="Seconds per round" type="number" id="seconds_input" class="panel_input" step="1">
+            <br>
+            <button id="time_button" class="panel_buttons">Set round time</button>
+          </div>
+          <br>
+          <div>
+            <input placeholder="Minutes per rest time" type="number" id="rest_minutes_input" class="panel_input" step="1">
+            <input placeholder="Seconds per rest time" type="number" id="rest_seconds_input" class="panel_input" step="1">
+            <br>
+            <button id="rest_time_button" class="panel_buttons">Set rest time</button>
+          </div>
+        </div>
       </div>
     </div>
+    <hr>
+    <footer>
+      <p>By Eric Matei Dragomir 2023</p>
+    </footer>
     <script src="boxing_clock_scripts.js"></script>
   </body>
 </html>

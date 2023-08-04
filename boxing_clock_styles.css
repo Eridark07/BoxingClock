@@ -54,7 +54,9 @@ h1, h2, h3, footer, button {
 
 .sidebar {
     flex: 25%;
-    background-color: darkgray;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
+    border-radius: 20px;
 }
 
 
@@ -67,5 +69,51 @@ h1, h2, h3, footer, button {
     .sidebar {
         flex: 100%;
     }
+    .sidebar {
+        margin-top: 2vh;
+    }
 }
 
+hr {
+    margin: 25px;
+}
+
+.contents {
+    text-align: center;
+    padding: 10px;
+}
+
+.panel_input {
+    text-align: center;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 15px;
+    font-family: serif;
+    color: white;
+    margin: 10px;
+}
+
+.panel_buttons {
+    padding: 10px;
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-family: serif;
+}
+
+.panel_buttons:hover {
+    border-color: black;
+    color: black;
+    background-color: white;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
