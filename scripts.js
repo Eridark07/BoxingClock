@@ -78,7 +78,7 @@ function rest_countdown(seclef=5) {
     timer.innerHTML = (`${minl}min ${lsec}s`);
     countdownTimeout = setTimeout(() => rest_countdown(seclef), 1000);
   } else {
-    isrest.innerHTML = "NOT RESTING";
+    isrest.innerHTML = "FIGHTING";
     nround = nround + 1;
     round_elem.innerHTML = nround;
     round_start_audio.play();
@@ -91,7 +91,7 @@ function reset_counter() {
   timer.style.color = "white"
   timer.style.textShadow = "0 0 10px white, 0 0 20px white, 0 0 30px white"
   clearTimeout(countdownTimeout);
-  isrest.innerHTML = "NOT RESTING";
+  isrest.innerHTML = "FIGHTING";
   check_all_values()
   set_round_time()
   set_round_time()
