@@ -13,7 +13,7 @@ The Boxing Clock is a web application designed to help you manage and time your 
 ## Usage
 
 1. Clone or download this repository to your local machine.
-2. Open the `index.html` file in a web browser.
+2. Open the `boxing_clock_index.html` file in a web browser.
 3. Configure your workout settings using the input fields on the right panel.
 4. Click the "Set rounds" button to define the number of rounds.
 5. Adjust the round duration using the "Set round time" button.
