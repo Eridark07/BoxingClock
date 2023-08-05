@@ -91,7 +91,7 @@ function reset_counter() {
   timer.style.color = "white"
   timer.style.textShadow = "0 0 10px white, 0 0 20px white, 0 0 30px white"
   clearTimeout(countdownTimeout);
-  isrest.innerHTML = "FIGHTING";
+  isrest.innerHTML = "PRESS START TO BEGIN";
   check_all_values()
   set_round_time()
   set_round_time()
@@ -123,6 +123,7 @@ function check_all_values() {
 function start_counter() {
   if (!isCountdownRunning) {
     check_all_values()
+    isrest.innerHTML = "FIGHTING"
     isCountdownRunning = true; // Set countdown status
     round_start_audio.play();
     countdown(round_time); // Start the countdown process
