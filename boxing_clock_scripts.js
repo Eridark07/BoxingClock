@@ -55,11 +55,15 @@ function countdown(seclef=10) {
     lsec = seclef % 60;
     timer.innerHTML = (`${minl}min ${lsec}s`);
     countdownTimeout = setTimeout(() => countdown(seclef), 1000);
+    timer.style.color = "lightcoral"
+    timer.style.textShadow = "0 0 10px lightcoral, 0 0 20px lightcoral, 0 0 30px lightcoral"
   } else if (nround == number_of_rounds) {
     fight_end_audio.play()
     alert("Fight finished")
     reset_counter();
   } else {
+    timer.style.color = "lightgreen"
+    timer.style.textShadow = "0 0 10px lightgreen, 0 0 20px lightgreen, 0 0 30px lightgreen"
     isrest.innerHTML = "RESTING"
     round_end_audio.play()
     rest_countdown(rest_time)
@@ -84,36 +88,41 @@ function rest_countdown(seclef=5) {
 
 
 function reset_counter() {
+  timer.style.color = "white"
+  timer.style.textShadow = "0 0 10px white, 0 0 20px white, 0 0 30px white"
   clearTimeout(countdownTimeout);
   isrest.innerHTML = "NOT RESTING";
-  round_time = Math.floor(minutesinput.value) * 60;
-  minl = Math.floor(round_time / 60);
-  lsec = round_time % 60;
-  timer.innerHTML = (`${minl}min ${lsec}s`);
-
+  check_all_values()
+  set_round_time()
+  set_round_time()
+  set_rounds()
   isCountdownRunning = false;
   nround = 1;
   round_elem.innerHTML = nround;
 }
 
+function check_all_values() {
+  // Check the user filled the values and fill them if necessary
+  if (roundin.value == "") {
+    roundin.value = 12;
+  }
+  if (minutesinput.value == "") {
+    minutesinput.value = 3;
+  }
+  if (secondsinput.value == "") {
+    secondsinput.value = 0;
+  }
+  if (restminutesinput.value == "") {
+    restminutesinput.value = 1;
+  }
+  if (restsecondsinput.value == "") {
+    restsecondsinput.value = 0;
+  }
+}
+
 function start_counter() {
   if (!isCountdownRunning) {
-    // Check the user filled the values and fill them if necessary
-    if (roundin.value == "") {
-      roundin.value = 12;
-    }
-    if (minutesinput.value == "") {
-      minutesinput.value = 3;
-    }
-    if (secondsinput.value == "") {
-      secondsinput.value = 0;
-    }
-    if (restminutesinput.value == "") {
-      restminutesinput.value = 1;
-    }
-    if (restsecondsinput.value == "") {
-      restsecondsinput.value = 0;
-    }
+    check_all_values()
     isCountdownRunning = true; // Set countdown status
     round_start_audio.play();
     countdown(round_time); // Start the countdown process
