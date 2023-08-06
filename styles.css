@@ -117,3 +117,14 @@ input[type="number"]::-webkit-outer-spin-button {
   appearance: none;
   margin: 0;
 }
+
+svg {
+    width: 5vh;
+    height: 120px;
+    margin: 0 10px 0 10px
+}
+
+a:visited {
+    text-decoration: none;
+    color: white;
+}
