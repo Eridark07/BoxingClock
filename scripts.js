@@ -26,6 +26,12 @@ var fight_end_audio = new Audio('sounds/end_fight_sound.mp3') // Import the audi
 sbutton.style.backgroundColor = "green";
 rbutton.style.backgroundColor = "red";
 
+
+// Testing
+var minl;
+var lsec;
+
+let time_left;
 let round_time = 180;
 let rest_time = 60;
 let number_of_rounds = 12;
@@ -92,6 +98,7 @@ function reset_counter() {
   timer.style.textShadow = "0 0 10px white, 0 0 20px white, 0 0 30px white"
   clearTimeout(countdownTimeout);
   isrest.innerHTML = "PRESS START TO BEGIN";
+  sbutton.innerHTML = "Start"
   check_all_values()
   set_round_time()
   set_round_time()
@@ -121,12 +128,32 @@ function check_all_values() {
 }
 
 function start_counter() {
-  if (!isCountdownRunning) {
+  if (sbutton.innerHTML == "Continue") {
+    if (isrest.innerHTML == "FIGHTING") {
+      isCountdownRunning = true
+      sbutton.innerHTML = "Pause"
+      time_left = (minl * 60) + lsec;
+      countdown(time_left)
+    }
+    else {
+      isCountdownRunning = true
+      sbutton.innerHTML = "Pause"
+      time_left = (minl * 60) + lsec;
+      rest_countdown(time_left)
+    }
+  }
+  else if (!isCountdownRunning) {
+    sbutton.innerHTML = "Pause"
     check_all_values()
     isrest.innerHTML = "FIGHTING"
     isCountdownRunning = true; // Set countdown status
     round_start_audio.play();
     countdown(round_time); // Start the countdown process
+  }
+  else {
+    isCountdownRunning = false
+    clearTimeout(countdownTimeout)
+    sbutton.innerHTML = "Continue"
   }
 }
 
