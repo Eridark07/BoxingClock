@@ -64,9 +64,11 @@ function countdown(seclef=10) {
     timer.style.color = "lightcoral"
     timer.style.textShadow = "0 0 10px lightcoral, 0 0 20px lightcoral, 0 0 30px lightcoral"
   } else if (nround == number_of_rounds) {
-    fight_end_audio.play()
-    alert("Fight finished")
-    reset_counter();
+    fight_end_audio.onended = function() {
+        alert("Fight finished");
+        reset_counter();
+    };
+    fight_end_audio.play();
   } else {
     timer.style.color = "lightgreen"
     timer.style.textShadow = "0 0 10px lightgreen, 0 0 20px lightgreen, 0 0 30px lightgreen"
