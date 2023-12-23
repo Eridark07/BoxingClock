@@ -2,7 +2,7 @@
 
 The Boxing Clock is a web application designed to help you manage and time your boxing workouts effectively. You can customize the number of rounds, the duration of each round, and the rest time between rounds.
 
-Explore the live project by visiting the BoxingClock web application at https://eridark07.github.io/BoxingClock/, where you can experience the interactive features and functionalities in action
+Explore the live project by visiting the BoxingClock web application at https://ericdragomir.github.io/BoxingClock/ where you can experience the interactive features and functionalities in action
 
 ## Features
 
